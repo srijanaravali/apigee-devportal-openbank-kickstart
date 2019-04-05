@@ -1,0 +1,8 @@
+
+apigee_openbank_kickstart_enhancement.api_proxy_controller_getContent:
+  path: '/api/{api_product_name}/{api_proxy_name}'
+  defaults:
+    _controller: '\Drupal\apigee_openbank_kickstart_enhancement\Controller\ApiProxyController::getContent'
+    _title: 'getContent'
+  requirements:
+    _permission: 'access content'

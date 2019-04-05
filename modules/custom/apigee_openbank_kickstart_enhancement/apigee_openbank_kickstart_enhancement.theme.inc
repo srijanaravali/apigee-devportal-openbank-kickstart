@@ -57,14 +57,31 @@ function template_preprocess_apidoc(&$variables) {
   }
 
   // Add the view_mode to the template.
-  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  $view_mode = $variables['view_mode'] = $variables['elements']['#view_mode'];
 
   // Add the entity to the template.
   /** @var \Drupal\Core\Entity\EntityInterface $entity */
   $variables['entity'] = $entity = $variables['elements']["#apidoc"];
 
-  // Add a link to the entity.
-  $variables['content']['field_link'] = $entity->toLink(t('View Documentation'))->toRenderable();
+  // Add a link to the entity only if view_mode is card.
+  if ($view_mode  === 'card') {
+    $variables['content']['field_link'] = $entity->toLink(t('View Product'))->toRenderable();
+  }
+  else {
+    $api_products = $entity->get('api_product')->referencedEntities();
+    $api_product = current($api_products);
+    if ($api_product) {
+      $api_proxies = implode("+", $api_product->getProxies());
+      $variables['content']['api_view'] = [
+        '#type' => 'view',
+        '#name' => 'apigee_apis',
+        '#display_id' => 'embed_1',
+        '#arguments' => [
+          $api_proxies,
+        ],
+      ];
+    }
+  }
 }
 
 /**

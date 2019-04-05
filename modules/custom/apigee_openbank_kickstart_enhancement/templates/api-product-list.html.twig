@@ -1,0 +1,23 @@
+{% if items %}
+    <ul class="api-product-list">
+        {% for product in items %}
+            {% set active_class =  product.id == active_product_id ? 'active': '' %}
+            {% set expanded_class = product.id == active_product_id and expanded ? 'expanded' : '' %}
+            <li class="api-product-list-item {{ active_class }} {{ expanded_class }}">
+              <div>
+                <a href="{{ base_path }}{{ product.alias }}"><span>{{ product.name }}</span></a>
+                {% if product.proxies %}
+                  <ul class="api-proxies-list">
+                    {% for proxy in product.proxies %}
+                      {% set proxy_active =  proxy.machine_name == active_proxy_id and product.id == active_product_id %}
+                        <li class="{{ proxy_active ? 'api-proxy-list-item active' : 'api-proxy-list-item' }}">
+                          <a href={{ base_path }}/api/{{ product.id}}{{ proxy.alias }}>{{ proxy.name }}</a>
+                        </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

@@ -51,6 +51,15 @@ function apigee_openbank_kickstart_enhancement_theme($existing, $type, $theme, $
       'render element' => 'elements',
       'file' => 'apigee_openbank_kickstart_enhancement.theme.inc',
     ],
+    'api_product_list' => [
+      'variables' => [
+        'items' => [],
+        'active_product_id' => NULL,
+        'active_proxy_id' => NULL,
+        'base_path' => substr(base_path(), 0, -1),
+        'api_proxy_page' => FALSE,
+      ],
+    ],
   ];
 }
 
