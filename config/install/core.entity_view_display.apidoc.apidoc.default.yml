@@ -3,44 +3,37 @@ status: true
 dependencies:
   config:
     - field.field.apidoc.apidoc.field_categories
+    - field.field.apidoc.apidoc.field_content
+    - field.field.apidoc.apidoc.field_header
     - field.field.apidoc.apidoc.field_image
   module:
     - apigee_edge_apidocs
-    - swagger_ui_formatter
+    - entity_reference_revisions
 id: apidoc.apidoc.default
 targetEntityType: apidoc
 bundle: apidoc
 mode: default
 content:
-  api_product:
-    type: entity_reference_label
+  field_content:
+    type: entity_reference_revisions_entity_view
     weight: 0
-    region: content
-    label: hidden
+    label: above
     settings:
-      link: true
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-  spec:
-    label: hidden
-    type: swagger_ui_file
-    weight: 3
     region: content
+  field_header:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
     settings:
-      validator: default
-      validator_url: ''
-      doc_expansion: list
-      show_top_bar: false
-      sort_tags_by_name: false
-      supported_submit_methods:
-        get: '0'
-        put: '0'
-        post: '0'
-        delete: '0'
-        options: '0'
-        head: '0'
-        patch: '0'
+      view_mode: default
+      link: ''
     third_party_settings: {  }
+    region: content
 hidden:
+  api_product: true
   description: true
   field_categories: true
   field_image: true
