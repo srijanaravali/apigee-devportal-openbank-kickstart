@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.apigee_proxy.body
+    - field.field.node.apigee_proxy.field_api_image
+    - field.field.node.apigee_proxy.field_machine_name
+    - field.field.node.apigee_proxy.field_specification
+    - node.type.apigee_proxy
+  module:
+    - swagger_ui_formatter
+    - user
+id: node.apigee_proxy.default
+targetEntityType: node
+bundle: apigee_proxy
+mode: default
+content:
+  field_specification:
+    weight: 1
+    label: hidden
+    settings:
+      validator: default
+      validator_url: ''
+      doc_expansion: list
+      show_top_bar: false
+      sort_tags_by_name: false
+      supported_submit_methods:
+        get: get
+        put: put
+        post: post
+        delete: delete
+        options: options
+        head: head
+        patch: patch
+    third_party_settings: {  }
+    type: swagger_ui_link
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_api_image: true
+  field_machine_name: true

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: apigee_proxy
+label: 'Apigee Proxy'
+type: 'canonical_entities:node'
+pattern: '/api/[node:field_machine_name]'
+selection_criteria:
+  e48717fc-9a71-43f7-84c0-116b07077cee:
+    id: node_type
+    bundles:
+      apigee_proxy: apigee_proxy
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e48717fc-9a71-43f7-84c0-116b07077cee
+selection_logic: and
+weight: -5
+relationships: {  }

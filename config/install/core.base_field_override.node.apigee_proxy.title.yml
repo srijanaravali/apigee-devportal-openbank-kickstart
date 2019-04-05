@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.apigee_proxy
+id: node.apigee_proxy.title
+field_name: title
+entity_type: node
+bundle: apigee_proxy
+label: 'Name of Proxy'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

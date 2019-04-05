@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.apidoc.field_header
+    - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.title_bar
+  module:
+    - apigee_edge_apidocs
+    - entity_reference_revisions
+id: apidoc.apidoc.field_header
+field_name: field_header
+entity_type: apidoc
+bundle: apidoc
+label: Header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hero: hero
+      title_bar: title_bar
+    target_bundles_drag_drop:
+      blockquote:
+        weight: 13
+        enabled: false
+      button:
+        weight: 14
+        enabled: false
+      button_group:
+        weight: 15
+        enabled: false
+      callout:
+        weight: 16
+        enabled: false
+      callout_group:
+        weight: 17
+        enabled: false
+      card:
+        weight: 18
+        enabled: false
+      card_group:
+        weight: 19
+        enabled: false
+      cta:
+        weight: 20
+        enabled: false
+      hero:
+        enabled: true
+        weight: 21
+      text:
+        weight: 22
+        enabled: false
+      text_image:
+        weight: 23
+        enabled: false
+      title_bar:
+        enabled: true
+        weight: 24
+field_type: entity_reference_revisions

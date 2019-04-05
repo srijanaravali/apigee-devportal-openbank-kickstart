@@ -5,7 +5,7 @@ namespace Drupal\apigee_openbank_kickstart_enhancement\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\webprofiler\Entity\EntityManagerWrapper;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Cache\Cache;
@@ -22,9 +22,9 @@ use Drupal\Core\Cache\CacheBackendInterface;
 class ApiProductApiProxieList extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * Drupal\webprofiler\Entity\EntityManagerWrapper definition.
+   * use Drupal\Core\Entity\EntityTypeManagerInterface definition.
    *
-   * @var \Drupal\webprofiler\Entity\EntityManagerWrapper
+   * @var Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
   /**
@@ -59,7 +59,7 @@ class ApiProductApiProxieList extends BlockBase implements ContainerFactoryPlugi
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    EntityManagerWrapper $entity_type_manager, 
+    EntityTypeManagerInterface $entity_type_manager, 
     CurrentRouteMatch $current_route_match,
     QueryFactory $entityQuery,
     CacheBackendInterface $cache_service

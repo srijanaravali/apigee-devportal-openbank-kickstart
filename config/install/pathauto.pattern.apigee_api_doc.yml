@@ -1,0 +1,15 @@
+uuid: fc0e729e-3d0a-486a-940b-9cc6aaf3786c
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_edge_apidocs
+id: apigee_api_doc
+label: 'Apigee Api Doc'
+type: 'canonical_entities:apidoc'
+pattern: '/product/[apidoc:api_product:target_id]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }
+

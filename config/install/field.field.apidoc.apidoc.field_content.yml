@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.apidoc.field_content
+    - paragraphs.paragraphs_type.blockquote
+    - paragraphs.paragraphs_type.callout_group
+    - paragraphs.paragraphs_type.card_group
+    - paragraphs.paragraphs_type.cta
+    - paragraphs.paragraphs_type.text_image
+    - paragraphs.paragraphs_type.title_bar
+  module:
+    - apigee_edge_apidocs
+    - entity_reference_revisions
+id: apidoc.apidoc.field_content
+field_name: field_content
+entity_type: apidoc
+bundle: apidoc
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      blockquote: blockquote
+      callout_group: callout_group
+      card_group: card_group
+      cta: cta
+      text_image: text_image
+      title_bar: title_bar
+    target_bundles_drag_drop:
+      blockquote:
+        enabled: true
+        weight: 13
+      button:
+        weight: 14
+        enabled: false
+      button_group:
+        weight: 15
+        enabled: false
+      callout:
+        weight: 16
+        enabled: false
+      callout_group:
+        enabled: true
+        weight: 17
+      card:
+        weight: 18
+        enabled: false
+      card_group:
+        enabled: true
+        weight: 19
+      cta:
+        enabled: true
+        weight: 20
+      hero:
+        weight: 21
+        enabled: false
+      text:
+        weight: 22
+        enabled: false
+      text_image:
+        enabled: true
+        weight: 23
+      title_bar:
+        enabled: true
+        weight: 24
+field_type: entity_reference_revisions

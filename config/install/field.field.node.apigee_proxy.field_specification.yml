@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_specification
+    - node.type.apigee_proxy
+  module:
+    - link
+id: node.apigee_proxy.field_specification
+field_name: field_specification
+entity_type: node
+bundle: apigee_proxy
+label: Specification
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link
