@@ -4,7 +4,7 @@ namespace Drupal\apigee_openbank_kickstart_enhancement\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\webprofiler\Entity\EntityManagerWrapper;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\apigee_edge\Entity\ApiProductInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Drupal\Core\Entity\Query\QueryFactory;
@@ -17,9 +17,9 @@ use Drupal\Core\Cache\CacheBackendInterface;
 class ApiProxyController extends ControllerBase {
 
   /**
-   * Drupal\webprofiler\Entity\EntityManagerWrapper definition.
+   * Drupal\Core\Entity\EntityTypeManagerInterface definition.
    *
-   * @var \Drupal\webprofiler\Entity\EntityManagerWrapper
+   * @var Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
   /**
@@ -38,7 +38,7 @@ class ApiProxyController extends ControllerBase {
   /**
    * Constructs a new ApiProxyController object.
    */
-  public function __construct(EntityManagerWrapper $entity_type_manager,     QueryFactory $entityQuery,
+  public function __construct(EntityTypeManagerInterface $entity_type_manager,     QueryFactory $entityQuery,
   CacheBackendInterface $cache_service) {
     $this->entityTypeManager = $entity_type_manager;
     $this->entityTypeManager = $entity_type_manager;

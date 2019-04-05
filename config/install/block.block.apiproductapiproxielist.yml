@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_openbank_kickstart_enhancement
+    - system
+  theme:
+    - apigee_openbank_kickstart
+id: apiproductapiproxielist
+theme: apigee_openbank_kickstart
+region: content_above
+weight: 0
+provider: null
+plugin: api_product_api_proxie_list
+settings:
+  id: api_product_api_proxie_list
+  label: 'Api product api proxie list'
+  provider: apigee_openbank_kickstart_enhancement
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/api/*/*\r\n/product/*"
+    negate: false
+    context_mapping: {  }
+

@@ -1,9 +1,9 @@
 {% if items %}
     <ul class="api-product-list">
         {% for product in items %}
-            {% set active_class =  product.id == active_product_id ? 'active': '' %}
-            {% set expanded_class = product.id == active_product_id and expanded ? 'expanded' : '' %}
-            <li class="api-product-list-item {{ active_class }} {{ expanded_class }}">
+            {% set active_class =  product.id == active_product_id ? ' active': '' %}
+            {% set expanded_class = product.id == active_product_id and api_proxy_page ? ' expanded' : '' %}
+            <li class="api-product-list-item{{ active_class }}{{ expanded_class }}">
               <div>
                 <a href="{{ base_path }}{{ product.alias }}"><span>{{ product.name }}</span></a>
                 {% if product.proxies %}
