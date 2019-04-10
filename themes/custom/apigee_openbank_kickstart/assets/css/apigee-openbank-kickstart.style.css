@@ -16569,10 +16569,13 @@ ul.social-links li a {
   background: inherit;
 }
 
-.api-explorer-item .svg-inline--fa {
+.api-explorer-item {
+  font-size: 1.125rem;
+}
+.api-explorer-item .fa-angle-right {
   cursor: pointer;
 }
-.api-explorer-item.expanded .svg-inline--fa {
+.api-explorer-item.expanded .fa-angle-right {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }

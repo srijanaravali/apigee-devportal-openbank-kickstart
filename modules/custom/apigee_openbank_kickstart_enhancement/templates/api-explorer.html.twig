@@ -19,13 +19,13 @@
                   {% elseif method.method == 'delete' %}
                     {% set method_class = 'danger' %}
                   {% endif %}
-                  <div><span class="api-explorer-method btn btn-{{method_class}} rounded-sm mr-2">{{ method.method | capitalize }}</span>
+                  <div><span class="api-explorer-method btn btn-{{method_class}} btn-sm rounded-sm mr-1">{{ method.method | capitalize }}</span>
                   {% if method.auth_required %}
                     <i class="fa fa-lock api-explorer-lock" aria-hidden="true"></i>
                   {% endif %}
-                  <span class="api-explorer-operation-id">{{ method.operation_id }}</span>
+                  <span class="small">{{ method.operation_id }}</span>
                   </div>
-                  <div class="text-muted">
+                  <div class="text-muted small">
                     {{ method.path }}
                   </div>
                 </a>

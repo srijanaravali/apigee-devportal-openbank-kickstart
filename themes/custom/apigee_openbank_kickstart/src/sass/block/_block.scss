@@ -1,10 +1,12 @@
 .api-explorer-item {
-  .svg-inline--fa {
+  font-size: 1.125rem;
+
+  .fa-angle-right {
     cursor: pointer;
   }
 
   &.expanded {
-    .svg-inline--fa {
+    .fa-angle-right {
       transform: rotate(90deg);
     }
   }
