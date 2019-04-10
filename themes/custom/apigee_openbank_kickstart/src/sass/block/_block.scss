@@ -1,0 +1,15 @@
+.api-explorer-item {
+  .svg-inline--fa {
+    cursor: pointer;
+  }
+
+  &.expanded {
+    .svg-inline--fa {
+      transform: rotate(90deg);
+    }
+  }
+
+  .api-explorer-method {
+    min-width: 100px;
+  }
+}

@@ -17052,6 +17052,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+(function ($, Drupal) {
+  Drupal.behaviors.side_menu = {
+    attach: function attach(context, settings) {
+      var pathName = location.pathname;
+      $('.nav-link').each(function () {
+        if ($(this).attr('href') == pathName) {
+          $(this).parent().siblings().addClass('show');
+          $(this).closest('li').addClass('expanded');
+        }
+      });
+      $(context).find('.svg-inline--fa').once('icon-clicked').click(function () {
+        var subMenu = $(this).parent().siblings();
+
+        if (subMenu.hasClass('show')) {
+          subMenu.removeClass('show');
+          $(this).closest('li').removeClass('expanded');
+        } else {
+          subMenu.addClass('show');
+          $(this).closest('li').addClass('expanded');
+        }
+      });
+    }
+  };
+})(jQuery, Drupal);
+
 /***/ }),
 
 /***/ "./src/sass/apigee-openbank-kickstart.style.scss":
@@ -17072,8 +17097,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/apple/src/devportal/web/profiles/contrib/apigee-openbank-devportal-kickstart/themes/custom/apigee_openbank_kickstart/src/js/apigee-openbank-kickstart.script.js */"./src/js/apigee-openbank-kickstart.script.js");
-module.exports = __webpack_require__(/*! /Users/apple/src/devportal/web/profiles/contrib/apigee-openbank-devportal-kickstart/themes/custom/apigee_openbank_kickstart/src/sass/apigee-openbank-kickstart.style.scss */"./src/sass/apigee-openbank-kickstart.style.scss");
+__webpack_require__(/*! /Users/haneetsingh/Sites/Srijan/apigee-devportal/web/profiles/contrib/apigee-devportal-openbank-kickstart/themes/custom/apigee_openbank_kickstart/src/js/apigee-openbank-kickstart.script.js */"./src/js/apigee-openbank-kickstart.script.js");
+module.exports = __webpack_require__(/*! /Users/haneetsingh/Sites/Srijan/apigee-devportal/web/profiles/contrib/apigee-devportal-openbank-kickstart/themes/custom/apigee_openbank_kickstart/src/sass/apigee-openbank-kickstart.style.scss */"./src/sass/apigee-openbank-kickstart.style.scss");
 
 
 /***/ })

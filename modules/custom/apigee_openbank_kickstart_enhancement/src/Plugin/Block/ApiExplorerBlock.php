@@ -87,13 +87,13 @@ class ApiExplorerBlock extends BlockBase implements ContainerFactoryPluginInterf
               $summary = $info['summary'];
               $description = $info['description'];
               $operation_id = $info['operationId'];
-              $tags = current($info['tags']);
+              $tags = isset($info['tags']) ? current($info['tags']) : 'default';
               $methods[] = [
                 'method' => $method,
                 'summary' => $summary,
                 'description' => $description,
                 'operation_id' => $operation_id,
-                'auth_required' => $info['security'] && sizeof($info['security']) ? TRUE: FALSE, 
+                'auth_required' =>  isset($info['security']) && $info['security'] && sizeof($info['security']) ? TRUE: FALSE,
                 'path' => $uri,
                 'tags' => $tags,
                 'uri' => sprintf('#/%s/%s', $tags, $operation_id),
@@ -110,7 +110,7 @@ class ApiExplorerBlock extends BlockBase implements ContainerFactoryPluginInterf
             ];
           }
         }
-      }  
+      }
     }
     return  [
       '#theme' => 'api_explorer',
