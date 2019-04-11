@@ -17081,7 +17081,7 @@ __webpack_require__.r(__webpack_exports__);
         var hash = location.hash.split('/');
         var openBlockElem = '#operations-default-' + hash[2];
 
-        if ($(openBlockElem)) {
+        if ($(openBlockElem).length) {
           $('html, body').animate({
             scrollTop: $(openBlockElem).offset().top - 90
           }, 'slow');

@@ -36,8 +36,7 @@ import '../components/card/collapsible-card';
       if (location.hash) {
         var hash = location.hash.split('/');
         var openBlockElem = '#operations-default-' + hash[2];
-
-        if ($(openBlockElem)) {
+        if ($(openBlockElem).length) {
           $('html, body').animate({
             scrollTop: $(openBlockElem).offset().top - 90
           }, 'slow');
