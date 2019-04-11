@@ -25,9 +25,6 @@
 
   Drupal.behaviors.HashUrl = {
     attach: function (context, settings) {
-      $( 'a[href="#"]' ).click( function(e) {
-        e.preventDefault();
-     });
     }
   };
 

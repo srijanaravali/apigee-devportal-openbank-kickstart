@@ -11,7 +11,7 @@
           <ul class="nav flex-column collapse">
             {% for method in item.methods %}
             <li class="api-explorer-item__sub-menu nav-item" class={{ method.method }}>
-              <a class="nav-link" href={{ base_path ~ item.uri ~ method.uri }}>
+              <a class="nav-link api-explorer__method {{ method.internal ? 'internal' }}" href={{ base_path ~ item.uri ~ method.uri }} data-method={{ method.method }}>
                   {% if method.method == 'post' %}
                     {% set method_class = 'success' %}
                   {% elseif method.method == 'get' %}

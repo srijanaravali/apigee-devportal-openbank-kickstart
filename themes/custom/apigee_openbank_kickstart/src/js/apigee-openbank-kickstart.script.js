@@ -35,22 +35,33 @@ import '../components/card/collapsible-card';
     attach: function(context, settings) {
       if (location.hash) {
         var hash = location.hash.split('/');
-        var openBlockElem = '#operations-default-' + hash[2];
+        var openBlockElem = '#operations-' +hash[1] + '-' + hash[2];
         if ($(openBlockElem).length) {
           $('html, body').animate({
             scrollTop: $(openBlockElem).offset().top - 90
-          }, 'slow');
+          }, 'medium');
         }
       }
-
-      $('.nav-link').click(function() {
+    }
+  };
+  Drupal.behaviors.internal_block_scroll = {
+    attach: function(context, settings) {
+      $('.api-explorer__method.internal').click(function(event) {
+        event.preventDefault();
         var clickedLink = $(this).attr('href').split('/');
-        var blockToScroll = '#operations-default-' + clickedLink[4];
-
+        var method = $(this).data('method');
+        var length = clickedLink.length;
+        var blockToScroll = '#operations-' + clickedLink[length-2] + '-' + clickedLink[length-1];
         if ($(blockToScroll).length) {
+          $(blockToScroll).click();
           $('html, body').animate({
             scrollTop: $(blockToScroll).offset().top - 90
-          }, 'slow');
+          }, 400);
+          var classes = $(blockToScroll).attr('class');
+          if (!classes.includes('is-open')) {
+            $(`${blockToScroll} .opblock-summary-${method}`).click();
+          }
+          event.stopPropagation();
         }
       });
     }

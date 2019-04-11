@@ -6,6 +6,7 @@ dependencies:
     - image.style.thumbnail
   module:
     - image
+    - path
     - user
 id: user.user.default
 targetEntityType: user
@@ -18,9 +19,31 @@ content:
   contact:
     weight: 5
     region: content
+  first_name:
+    type: string_textfield
+    weight: '-11'
+    settings:
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
   language:
     weight: 0
     region: content
+  last_name:
+    type: string_textfield
+    weight: '-11'
+    settings:
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 6
     region: content

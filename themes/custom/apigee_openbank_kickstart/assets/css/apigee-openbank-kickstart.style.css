@@ -15676,7 +15676,7 @@ small {
 }
 
 .page__breadcrumbs {
-  background-color: #2196f3;
+  background-color: #555;
   font-size: 0.875rem;
 }
 .page__breadcrumbs a {
@@ -15728,6 +15728,10 @@ small {
   display: none;
 }
 
+.breadcrumb {
+  background: #555;
+}
+
 .breadcrumb-item a {
   font-size: 0.875rem;
   letter-spacing: 1px;
@@ -15741,6 +15745,10 @@ small {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.btn.btn-primary {
+  font-size: 1.2rem;
 }
 
 [class*=btn-outline-] {
@@ -16527,6 +16535,18 @@ ul.social-links li a {
   height: 100%;
 }
 
+.apidoc__field-rating {
+  display: none;
+}
+
+.user-logged-in .apidoc__field-rating {
+  display: block;
+}
+
+.apidoc--view-mode-full .form-type-select {
+  float: right;
+}
+
 .swagger-ui {
   margin-top: 2rem;
 }
@@ -16581,6 +16601,28 @@ ul.social-links li a {
 }
 .api-explorer-item .api-explorer-method {
   min-width: 100px;
+}
+
+.block--apiexplorerblock {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+.block--apiexplorerblock h2 {
+  margin: 0.3em;
+  font-size: 1.5rem;
+}
+.block--apiexplorerblock .api-explorer-item:first-child {
+  border-top: 1px solid #dddddd;
+}
+.block--apiexplorerblock .api-explorer-item {
+  padding: 0.5em;
+  margin-bottom: 0.2em;
+}
+.block--apiexplorerblock .api-explorer-item:not(:last-child) {
+  border-bottom: 1px solid #dddddd;
+}
+.block--apiexplorerblock .btn.btn-primary {
+  font-size: 0.875rem;
 }
 
 .form-control,

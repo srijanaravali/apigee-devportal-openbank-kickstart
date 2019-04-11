@@ -57,7 +57,7 @@ function template_preprocess_apidoc(&$variables) {
   }
 
   // Add the view_mode to the template.
-  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  $view_mode = $variables['view_mode'] = $variables['elements']['#view_mode'];
 
   // Add the entity to the template.
   /** @var \Drupal\Core\Entity\EntityInterface $entity */
@@ -65,7 +65,7 @@ function template_preprocess_apidoc(&$variables) {
 
   // Add a link to the entity.
   if (isset($view_mode) && $view_mode == 'card') {
-      $variables['content']['field_link'] = $entity->toLink(t('View Documentation'))->toRenderable();
+    $variables['content']['field_link'] = $entity->toLink(t('View Documentation'))->toRenderable();
   }
 }
 

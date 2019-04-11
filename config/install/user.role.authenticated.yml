@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies: {  }
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'analytics own developer_app'
+  - 'create developer_app'
+  - 'delete own developer_app'
+  - 'update own developer_app'
+  - 'use text format basic_html'
+  - 'view media'
+  - 'view own developer_app'
+  - 'view published apidoc entities'

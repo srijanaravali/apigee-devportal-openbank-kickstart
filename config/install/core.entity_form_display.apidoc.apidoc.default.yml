@@ -8,6 +8,7 @@ dependencies:
     - apigee_edge_apidocs
     - file
     - media_library
+    - path
     - text
 id: apidoc.apidoc.default
 targetEntityType: apidoc
@@ -32,7 +33,7 @@ content:
       rows: 5
     third_party_settings: {  }
   field_categories:
-    weight: 4
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
@@ -42,7 +43,7 @@ content:
     region: content
   field_image:
     type: media_library_widget
-    weight: 7
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -54,10 +55,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   spec:
-    label: hidden
     type: file_generic
-    weight: 3
+    weight: 4
     region: content
     settings:
       progress_indicator: throbber

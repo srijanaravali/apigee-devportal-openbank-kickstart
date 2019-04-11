@@ -13,6 +13,11 @@ targetEntityType: user
 bundle: user
 mode: compact
 content:
+  display_name:
+    weight: -10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   user_picture:
     type: image
     weight: 0
@@ -24,4 +29,3 @@ content:
     label: hidden
 hidden:
   member_for: true
-
