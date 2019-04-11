@@ -17075,6 +17075,20 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   };
+  Drupal.behaviors.block_scroll = {
+    attach: function attach(context, settings) {
+      if (location.hash) {
+        var hash = location.hash.split('/');
+        var openBlockElem = '#operations-default-' + hash[2];
+
+        if ($(openBlockElem)) {
+          $('html, body').animate({
+            scrollTop: $(openBlockElem).offset().top - 90
+          }, 'slow');
+        }
+      }
+    }
+  };
 })(jQuery, Drupal);
 
 /***/ }),
