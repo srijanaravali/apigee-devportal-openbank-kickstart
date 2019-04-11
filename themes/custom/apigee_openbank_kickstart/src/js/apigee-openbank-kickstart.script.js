@@ -43,6 +43,16 @@ import '../components/card/collapsible-card';
         }
       }
 
+      $('.nav-link').click(function() {
+        var clickedLink = $(this).attr('href').split('/');
+        var blockToScroll = '#operations-default-' + clickedLink[4];
+
+        if ($(blockToScroll).length) {
+          $('html, body').animate({
+            scrollTop: $(blockToScroll).offset().top - 90
+          }, 'slow');
+        }
+      });
     }
   };
 
