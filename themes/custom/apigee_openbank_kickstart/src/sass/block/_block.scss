@@ -1,0 +1,17 @@
+.api-explorer-item {
+  font-size: 1.125rem;
+
+  .fa-angle-right {
+    cursor: pointer;
+  }
+
+  &.expanded {
+    .fa-angle-right {
+      transform: rotate(90deg);
+    }
+  }
+
+  .api-explorer-method {
+    min-width: 100px;
+  }
+}

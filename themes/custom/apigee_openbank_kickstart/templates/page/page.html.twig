@@ -82,9 +82,20 @@
         <div class="page__content">
           {% if not node.field_content.value %}
             <div class="container py-5">
+              {% if page.sidebar_left %}
+                <div class="row">
+                  <div class="col-md-4">
+                    {{page.sidebar_left}}
+                  </div>
+                  <div class="col-md-8">
+              {% endif %}
           {% endif %}
             {{ page.content }}
           {% if not node.field_content.value %}
+            {% if page.sidebar_left %}
+                </div>
+              </div>
+            {% endif %}
             </div>
           {% endif %}
         </div>

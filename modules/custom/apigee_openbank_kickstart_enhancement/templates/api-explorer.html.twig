@@ -1,25 +1,35 @@
 {{ attach_library('apigee_openbank_kickstart_enhancement/hash_url') }}
 {% if items %}
-  <ul id="api-explorer">
+  <ul id="api-explorer" class="navbar-nav flex-column">
     {% for item in items %}
-      <li class="api-explorer-item">
-        <strong><a href={{ base_path ~ item.uri }}>{{ item.label }}</a></strong>
+      <li class="api-explorer-item nav-item">
+        <strong>
+          <a class="nav-link d-inline mr-1" href={{ base_path ~ item.uri }}>{{ item.label }}</a>
+          <i class="fas fa-angle-right"></i>
+        </strong>
         {% if item.methods %}
-          <ul>
+          <ul class="nav flex-column collapse">
             {% for method in item.methods %}
-              <a href={{ base_path ~ item.uri ~ method.uri }}>
-                <li class="api-explorer-item" class={{ method.method }}>
-                  <div><span class="api-explorer-method">{{ method.method | capitalize }}</span>
+            <li class="api-explorer-item__sub-menu nav-item" class={{ method.method }}>
+              <a class="nav-link" href={{ base_path ~ item.uri ~ method.uri }}>
+                  {% if method.method == 'post' %}
+                    {% set method_class = 'success' %}
+                  {% elseif method.method == 'get' %}
+                    {% set method_class = 'primary' %}
+                  {% elseif method.method == 'delete' %}
+                    {% set method_class = 'danger' %}
+                  {% endif %}
+                  <div><span class="api-explorer-method btn btn-{{method_class}} btn-sm rounded-sm mr-1">{{ method.method | capitalize }}</span>
                   {% if method.auth_required %}
                     <i class="fa fa-lock api-explorer-lock" aria-hidden="true"></i>
                   {% endif %}
-                  <span class="api-explorer-operation-id">{{ method.operation_id }}</span>
+                  <span class="small">{{ method.operation_id }}</span>
                   </div>
-                  <div>
+                  <div class="text-muted small">
                     {{ method.path }}
                   </div>
-                </li>
-              </a>
+                </a>
+              </li>
             {% endfor %}
           </ul>
         {% endif %}

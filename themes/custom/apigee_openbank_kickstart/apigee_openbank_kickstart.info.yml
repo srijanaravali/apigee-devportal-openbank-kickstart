@@ -13,6 +13,7 @@ regions:
   header: Header
   content_above: 'Content Above'
   tasks: Tasks
+  sidebar_left: 'Sidebar Left'
   content: Content
   content_below: 'Content Below'
   footer: Footer
