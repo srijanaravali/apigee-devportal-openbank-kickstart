@@ -114,7 +114,7 @@ class ApiExplorerBlock extends BlockBase implements ContainerFactoryPluginInterf
                 'path' => $path,
                 'tags' => $tags,
                 'uri' => sprintf('#/%s/%s', $tags, $operation_id),
-                'internal' => $apidoc->id() == $doc->id(),
+                'internal' => $apidoc && $apidoc->id() == $doc->id(),
               ];
             }
           }

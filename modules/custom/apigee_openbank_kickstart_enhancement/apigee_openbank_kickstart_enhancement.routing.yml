@@ -1,0 +1,12 @@
+
+apigee_openbank_kickstart_enhancement.apigee_notify_form:
+  path: '/admin/apigee-notify'
+  defaults:
+    _form: '\Drupal\apigee_openbank_kickstart_enhancement\Form\ApigeeNotifyForm'
+    _title: 'ApigeeNotifyForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: FALSE
+
+  

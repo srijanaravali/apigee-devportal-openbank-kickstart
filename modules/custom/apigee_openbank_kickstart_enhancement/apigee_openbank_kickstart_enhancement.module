@@ -28,6 +28,7 @@ use Drupal\apigee_openbank_kickstart_enhancement\Entity\AppViewBuilder;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Menu\LocalActionDefault;
+use Drupal\Core\Render\Markup;
 
 /*
  * Load all theme functions.
@@ -124,4 +125,22 @@ function apigee_openbank_kickstart_enhancement_user_view(array &$build, EntityIn
       '#markup' => $entity->label(),
     ];
   }
+}
+
+/**
+* Implements hook_mail().
+*/
+function apigee_openbank_kickstart_enhancement_mail($key, &$message, $params) {
+ switch ($key) {
+   case 'apigee_notify':
+     $options = [
+       'langcode' => $message['langcode'],
+     ];
+     $message['headers']['Content-Type'] = SWIFTMAILER_FORMAT_HTML;
+     $message['from'] = \Drupal::config('system.site')->get('mail');
+     $message['subject'] = $params['subject'];
+     $message['body'][] = Markup::create($params['message']);
+     $message['params']['files'] =  $params['attachments'];
+     break;
+ }
 }
